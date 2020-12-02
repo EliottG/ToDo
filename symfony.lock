@@ -53,9 +53,6 @@
     "incenteev/composer-parameter-handler": {
         "version": "v2.1.4"
     },
-    "monolog/monolog": {
-        "version": "2.1.1"
-    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -68,9 +65,6 @@
     "psr/simple-cache": {
         "version": "1.0.1"
     },
-    "sensio/framework-extra-bundle": {
-        "version": "v3.0.27"
-    },
     "swiftmailer/swiftmailer": {
         "version": "v6.2.3"
     },
@@ -78,10 +72,13 @@
         "version": "v5.1.9"
     },
     "symfony/cache": {
-        "version": "v4.4.16"
+        "version": "v4.4.17"
+    },
+    "symfony/cache-contracts": {
+        "version": "v2.2.0"
     },
     "symfony/config": {
-        "version": "v4.4.16"
+        "version": "v4.4.17"
     },
     "symfony/console": {
         "version": "4.4",
@@ -103,13 +100,16 @@
         "version": "v4.4.16"
     },
     "symfony/dependency-injection": {
-        "version": "v4.4.16"
+        "version": "v4.4.17"
     },
     "symfony/deprecation-contracts": {
         "version": "v2.2.0"
     },
     "symfony/dotenv": {
         "version": "v4.4.16"
+    },
+    "symfony/error-handler": {
+        "version": "v4.4.17"
     },
     "symfony/event-dispatcher": {
         "version": "v4.4.16"
@@ -118,10 +118,10 @@
         "version": "v1.1.9"
     },
     "symfony/filesystem": {
-        "version": "v5.1.8"
+        "version": "v4.4.17"
     },
     "symfony/finder": {
-        "version": "v5.1.8"
+        "version": "v4.4.17"
     },
     "symfony/flex": {
         "version": "1.0",
@@ -156,6 +156,9 @@
             "./src/Kernel.php"
         ]
     },
+    "symfony/http-client-contracts": {
+        "version": "v2.3.1"
+    },
     "symfony/http-foundation": {
         "version": "v5.1.8"
     },
@@ -164,24 +167,6 @@
     },
     "symfony/mime": {
         "version": "v5.1.9"
-    },
-    "symfony/monolog-bridge": {
-        "version": "v5.1.8"
-    },
-    "symfony/monolog-bundle": {
-        "version": "3.3",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "3.3",
-            "ref": "d7249f7d560f6736115eee1851d02a65826f0a56"
-        },
-        "files": [
-            "./config/packages/dev/monolog.yaml",
-            "./config/packages/prod/deprecations.yaml",
-            "./config/packages/prod/monolog.yaml",
-            "./config/packages/test/monolog.yaml"
-        ]
     },
     "symfony/polyfill-apcu": {
         "version": "v1.20.0"
@@ -258,8 +243,11 @@
             "./templates/base.html.twig"
         ]
     },
+    "symfony/var-dumper": {
+        "version": "v4.4.17"
+    },
     "symfony/var-exporter": {
-        "version": "v5.1.8"
+        "version": "v4.4.17"
     },
     "symfony/yaml": {
         "version": "v5.1.8"
