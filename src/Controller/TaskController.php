@@ -15,7 +15,14 @@ class TaskController extends AbstractController
      */
     public function listAction()
     {
-        return $this->render('task/list.html.twig', ['tasks' => $this->getDoctrine()->getRepository(Task::class)->findAll()]);
+        $user = $this->getUser();
+        $role = $user->getRoles();
+        if ($role[0] == 'ROLE_ADMIN') {
+            return $this->render('task/list.html.twig', ['tasks' => $this->getDoctrine()->getRepository(Task::class)->findByUserAnonymous($user->getId())]);
+        } else {
+            return $this->render('task/list.html.twig', ['tasks' => $this->getDoctrine()->getRepository(Task::class)->findBy(['User' => $user->getId()])]);
+        }
+
     }
 
     /**
@@ -24,13 +31,13 @@ class TaskController extends AbstractController
     public function createAction(Request $request)
     {
         $task = new Task();
-        $form = $this->createForm(FormTaskType::class, $task);
+        $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
+            $task->setUser($this->getUser());
             $em->persist($task);
             $em->flush();
 
@@ -47,6 +54,11 @@ class TaskController extends AbstractController
      */
     public function editAction(Task $task, Request $request)
     {
+        if ($task->getUser() == null) {
+            $this->denyAccessUnlessGranted('admin', $task);
+        } else {
+            $this->denyAccessUnlessGranted('edit', $task);
+        }
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
@@ -70,6 +82,12 @@ class TaskController extends AbstractController
      */
     public function toggleTaskAction(Task $task)
     {
+        if ($task->getUser() == null) {
+            $this->denyAccessUnlessGranted('admin', $task);
+        } else {
+            $this->denyAccessUnlessGranted('edit', $task);
+        }
+
         $task->toggle(!$task->isDone());
         $this->getDoctrine()->getManager()->flush();
 
@@ -83,10 +101,14 @@ class TaskController extends AbstractController
      */
     public function deleteTaskAction(Task $task)
     {
+        if ($task->getUser() == null) {
+            $this->denyAccessUnlessGranted('admin', $task);
+        } else {
+            $this->denyAccessUnlessGranted('delete', $task);
+        }
         $em = $this->getDoctrine()->getManager();
         $em->remove($task);
         $em->flush();
-
         $this->addFlash('success', 'La tâche a bien été supprimée.');
 
         return $this->redirectToRoute('task_list');
