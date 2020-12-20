@@ -35,7 +35,15 @@ class UserRepository extends ServiceEntityRepository
         ;
     }
     */
-
+    public function findOneByRole($role)
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.roles LIKE :role')
+            ->setParameter('role', [$role])
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult();
+    }
     /*
     public function findOneBySomeField($value): ?User
     {

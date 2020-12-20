@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Task;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @method Task|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,42 +20,22 @@ class TaskRepository extends ServiceEntityRepository
         parent::__construct($registry, Task::class);
     }
 
-    public function findByUserAnonymous($value): array
+    public function findByUserAnonymous(UserInterface $user): array
     {
         return $this->createQueryBuilder('t')
-            ->andWhere('t.User = :val')
-            ->orWhere('t.User is null')
-            ->setParameter('val', $value)
+            ->andWhere('t.user = :val OR t.user is null')
+            ->setParameter('val', $user)
             ->getQuery()
-            ->getResult()
-            ;
+            ->getResult();
     }
-    // /**
-    //  * @return Task[] Returns an array of Task objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Task
+    public function findAllByUser(UserInterface $user)
     {
         return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('t.user = :user')
+            ->setParameter('user', $user)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult();
     }
-    */
+
 }

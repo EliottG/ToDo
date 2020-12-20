@@ -26,7 +26,35 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b3cfe4d-9661-4ba4-9187-d4a87a4cb5f1" name="Default Changelist" comment="Add new functions in the app" />
+    <list default="true" id="1b3cfe4d-9661-4ba4-9187-d4a87a4cb5f1" name="Default Changelist" comment="Add new functions in the app">
+      <change afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Functionnal/AdminControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Functionnal/TaskControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Functionnal/UserControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ToDo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ToDo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201212154847.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TaskRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/Voter/TaskOwnerVoter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Voter/TaskOwnerVoter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/list.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,6 +154,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
       <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/dama/doctrine-test-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1lYGOLlbB0K13wTJHPKUkgnYKX1" />
@@ -134,6 +163,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -149,6 +179,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\ToDo\tests\Functionnal" />
       <recent name="C:\laragon\www\ToDo\templates\admin" />
     </key>
   </component>
@@ -163,6 +194,12 @@
       <workItem from="1607766580433" duration="18158000" />
       <workItem from="1607849400510" duration="10897000" />
       <workItem from="1607970501894" duration="605000" />
+      <workItem from="1608118906042" duration="3218000" />
+      <workItem from="1608139232292" duration="2641000" />
+      <workItem from="1608236131546" duration="1608000" />
+      <workItem from="1608382806530" duration="873000" />
+      <workItem from="1608383696518" duration="6997000" />
+      <workItem from="1608460266024" duration="14335000" />
     </task>
     <task id="LOCAL-00001" summary="Add fixtures">
       <created>1607772552238</created>
@@ -212,28 +249,55 @@
     <MESSAGE value="Add fixtures" />
     <MESSAGE value="Add new functions in the app" />
     <option name="LAST_COMMIT_MESSAGE" value="Add new functions in the app" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607852733026">
+    <state x="586" y="203" key="#Inspections" timestamp="1608140944995">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1607852733026" />
-    <state x="184" y="87" key="DiffContextDialog" timestamp="1607779122460">
+    <state x="586" y="203" key="#Inspections/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608140944995" />
+    <state x="552" y="166" key="#Plugins" timestamp="1608139217571">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="184" y="87" key="DiffContextDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1607779122460" />
+    <state x="552" y="166" key="#Plugins/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608139217571" />
+    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608139596247">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608139596247" />
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1608140882356">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608140882356" />
+    <state x="649" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608236391499">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="649" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608236391499" />
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608493804069">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608493804069" />
+    <state x="779" y="299" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1608139769923">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="779" y="299" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608139769923" />
+    <state x="184" y="87" key="DiffContextDialog" timestamp="1608383563781">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="184" y="87" key="DiffContextDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608383563781" />
     <state x="740" y="266" key="FileChooserDialogImpl" timestamp="1607769343919">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="266" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1607769343919" />
-    <state x="812" y="227" key="RollbackChangesDialog" timestamp="1607786199074">
+    <state x="812" y="227" key="RollbackChangesDialog" timestamp="1608383567969">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="812" y="227" key="RollbackChangesDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1607786199074" />
-    <state x="461" y="170" key="SettingsEditor" timestamp="1607769345426">
+    <state x="812" y="227" key="RollbackChangesDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608383567969" />
+    <state x="461" y="170" key="SettingsEditor" timestamp="1608463984174">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1607769345426" />
+    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608463984174" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1607876014108">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -243,9 +307,25 @@
     </state>
     <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1607772554283" />
     <state x="2472" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1607970677350" />
-    <state x="1216" y="214" width="585" height="801" key="find.popup" timestamp="1607852853946">
+    <state x="239" y="0" width="761" height="819" key="dock-window-1" timestamp="1608465094712">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1216" y="214" width="585" height="801" key="find.popup/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1607852853946" />
+    <state x="239" y="0" width="761" height="819" key="dock-window-1/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608465094712" />
+    <state x="1216" y="214" width="585" height="801" key="find.popup" timestamp="1608393799272">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1216" y="214" width="585" height="801" key="find.popup/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608393799272" />
+    <state x="601" y="251" width="700" height="530" key="recent.locations.popup" timestamp="1608461679096">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="601" y="251" width="700" height="530" key="recent.locations.popup/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608461679096" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1608393874755">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608393874755" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1608472915742">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608472915742" />
   </component>
 </project>

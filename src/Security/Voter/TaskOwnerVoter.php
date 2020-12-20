@@ -6,6 +6,7 @@ use App\Entity\Task;
 use App\Entity\User;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 class TaskOwnerVoter extends Voter
@@ -13,6 +14,15 @@ class TaskOwnerVoter extends Voter
     const DELETE = 'delete';
     const EDIT = 'edit';
     const ADMIN = 'admin';
+    /**
+     * @var Security
+     */
+    private $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
 
 
     protected function supports($attribute, $subject)
@@ -35,21 +45,18 @@ class TaskOwnerVoter extends Voter
         // ... (check conditions and return true to grant permission) ...
         switch ($attribute) {
             case self::DELETE:
-                return $this->canEdit($task,$user);
+                return $this->canDelete($task, $user);
                 break;
             case self::EDIT:
-                return $this->canDelete($task,$user);
-                break;
-            case self::ADMIN:
-                return $this->adminPass($user);
+                return $this->canEdit($task, $user);
                 break;
         }
 
         return false;
     }
+
     private function canDelete(Task $task, User $user)
     {
-        // if they can edit, they can view
         if ($this->canEdit($task, $user)) {
             return true;
         }
@@ -57,13 +64,13 @@ class TaskOwnerVoter extends Voter
         return false;
     }
 
-    private function adminPass(User $user)
-    {
-        $userRole = $user->getRoles();
-        return $userRole[0] === 'ROLE_ADMIN';
-    }
+
     private function canEdit(Task $task, User $user)
     {
+        if (!$task->getUser()) {
+            return $this->security->isGranted("ROLE_ADMIN");
+        }
+
         // this assumes that the Post object has a `getOwner()` method
         return $user === $task->getUser();
     }
