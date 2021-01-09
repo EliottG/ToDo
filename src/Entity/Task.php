@@ -42,8 +42,9 @@ class Task
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tasks")
+     * @var ?User
      */
-    private $User;
+    private $user;
 
     public function __construct()
     {
@@ -98,12 +99,17 @@ class Task
 
     public function getUser(): ?User
     {
-        return $this->User;
+        return $this->user;
     }
 
-    public function setUser(?User $User): self
+    public function getUsername(): string
     {
-        $this->User = $User;
+        return ($this->user) ? $this->user->getUsername() : "Anonyme";
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

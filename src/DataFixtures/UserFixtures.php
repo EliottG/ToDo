@@ -29,6 +29,7 @@ class UserFixtures extends Fixture
             $user->setEmail('email' . $i . '@mail.com');
             switch ($i) {
                 case 1:
+                    $user->setUsername('Admin');
                     $this->addReference(self::USER_REFERENCE_ONE, $user);
                     $user->setRoles(['ROLE_ADMIN']);
                     break;

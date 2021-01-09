@@ -3,30 +3,46 @@
 namespace App\Controller;
 
 use App\Entity\Task;
+use App\Entity\User;
 use App\Form\TaskType;
-use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\TaskRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
+/**
+ * Class TaskController
+ * @package App\Controller
+ * @IsGranted("ROLE_USER")
+ */
 class TaskController extends AbstractController
 {
     /**
      * @Route("/tasks", name="task_list")
      */
-    public function listAction()
+    public function listAction(Security $security, TaskRepository $repository)
     {
-        $user = $this->getUser();
-        $role = $user->getRoles();
-        if ($role[0] == 'ROLE_ADMIN') {
-            return $this->render('task/list.html.twig', ['tasks' => $this->getDoctrine()->getRepository(Task::class)->findByUserAnonymous($user->getId())]);
+
+        if ($security->isGranted("ROLE_ADMIN")) {
+            $task = $repository->findByUserAnonymous($this->getUser());
         } else {
-            return $this->render('task/list.html.twig', ['tasks' => $this->getDoctrine()->getRepository(Task::class)->findBy(['User' => $user->getId()])]);
+            $task = $repository->findAllByUser($this->getUser());
         }
+
+        return $this->render('task/list.html.twig', ['tasks' => $task]);
+
 
     }
 
     /**
      * @Route("/tasks/create", name="task_create")
+     * @param Request $request
+     * @return RedirectResponse|Response
+     * @throws \Exception
      */
     public function createAction(Request $request)
     {
@@ -37,7 +53,13 @@ class TaskController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $task->setUser($this->getUser());
+
+            $user = $this->getUser();
+            if (!$user instanceof User) {
+                throw new \Exception("Invalid User");
+            }
+
+            $task->setUser($user);
             $em->persist($task);
             $em->flush();
 
@@ -51,14 +73,13 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/tasks/{id}/edit", name="task_edit")
+     * @param Task $task
+     * @param Request $request
+     * @return RedirectResponse|Response
+     * @IsGranted("edit", subject="task")
      */
     public function editAction(Task $task, Request $request)
     {
-        if ($task->getUser() == null) {
-            $this->denyAccessUnlessGranted('admin', $task);
-        } else {
-            $this->denyAccessUnlessGranted('edit', $task);
-        }
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
@@ -77,17 +98,15 @@ class TaskController extends AbstractController
         ]);
     }
 
+
     /**
      * @Route("/tasks/{id}/toggle", name="task_toggle")
+     * @param Task $task
+     * @return RedirectResponse
+     * @IsGranted("edit", subject="task")
      */
     public function toggleTaskAction(Task $task)
     {
-        if ($task->getUser() == null) {
-            $this->denyAccessUnlessGranted('admin', $task);
-        } else {
-            $this->denyAccessUnlessGranted('edit', $task);
-        }
-
         $task->toggle(!$task->isDone());
         $this->getDoctrine()->getManager()->flush();
 
@@ -97,15 +116,26 @@ class TaskController extends AbstractController
     }
 
     /**
+     * @param TaskRepository $taskRepository
+     * @Route("/tasks/done", name="task_done")
+     */
+    public function isDoneTaskAction(TaskRepository $taskRepository)
+    {
+        $user = $this->getUser();
+        $tasks = $taskRepository->findByIsDone($user);
+        return $this->render('task/listDone.html.twig', [
+            'tasks' => $tasks
+            ]);
+
+    }
+    /**
      * @Route("/tasks/{id}/delete", name="task_delete")
+     * @IsGranted("delete", subject="task")
+     * @param Task $task
+     * @return RedirectResponse
      */
     public function deleteTaskAction(Task $task)
     {
-        if ($task->getUser() == null) {
-            $this->denyAccessUnlessGranted('admin', $task);
-        } else {
-            $this->denyAccessUnlessGranted('delete', $task);
-        }
         $em = $this->getDoctrine()->getManager();
         $em->remove($task);
         $em->flush();

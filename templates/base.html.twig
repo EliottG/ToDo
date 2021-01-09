@@ -25,26 +25,32 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-light navbar-fixed-top" style="background-color: #e3f2fd;" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">To Do List app</a>
-
-                    <img src="{{ asset('img/Logo_OpenClassrooms.png') }}" alt="OpenClassrooms" />
-                </div>
-            </div>
-        </nav>
-
-        <!-- Page Content -->
+    <nav class="navbar navbar-light navbar-fixed-top" style="background-color: #e3f2fd;" role="navigation">
         <div class="container">
-            <div class="row">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('homepage') }}">To Do List app</a>
+
+                <img src="{{ asset('img/Logo_OpenClassrooms.png') }}" alt="OpenClassrooms"/>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
             {% if app.user %}
-                 <a href="{{ path('logout') }}" class="pull-right btn btn-danger">Se déconnecter</a>
-                {% else %}
+                <a href="{{ path('logout') }}" class="pull-right btn btn-danger">Se déconnecter</a>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('admin_user_list') }}" class="pull-right btn btn-warning">Voir les utilisateurs</a>
+
+                {% endif %}
+                <a href="{{ path('user_edit', {id: app.user.id}) }}" class="btn btn-info">Modifier mon compte</a>
+            {% else %}
                 <a href="{{ path('user_create') }}" class="btn btn-primary">Créer un utilisateur</a>
                 <a href="{{ path('login') }}" class="btn btn-success">Se connecter</a>
-                {% endif %}
-            </div>
+            {% endif %}
+
+        </div>
 
             <div class="row">
                 <div class="col-md-12">
