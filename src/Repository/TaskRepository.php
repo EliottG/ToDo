@@ -20,6 +20,14 @@ class TaskRepository extends ServiceEntityRepository
         parent::__construct($registry, Task::class);
     }
 
+    public function findByIsDone(UserInterface $user)
+    {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.user = :val AND t.isDone = true')
+            ->setParameter('val', $user)
+            ->getQuery()
+            ->getResult();
+    }
     public function findByUserAnonymous(UserInterface $user): array
     {
         return $this->createQueryBuilder('t')

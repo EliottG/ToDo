@@ -3,11 +3,11 @@
 namespace App\Tests\Functionnal;
 
 use App\Entity\User;
+use App\Tests\LoginTrait;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class AdminControllerTest extends WebTestCase
 {
-
     private $client;
     private $userRepository;
     /**
@@ -15,19 +15,31 @@ class AdminControllerTest extends WebTestCase
      */
     private $urlGenerator;
 
-    public function testIndexAdmin()
+    protected function setUp(): void
     {
-        $this->loginWithAdmin();
-        $this->client->request('GET', $this->urlGenerator->generate('admin_user_list'));
-
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->client = static ::createClient();
+        $this->userRepository = $this->client->getContainer()
+            ->get('doctrine.orm.default_entity_manager')
+            ->getRepository(User::class);
+        $this->urlGenerator = $this->client
+            ->getContainer()
+            ->get('router');
     }
 
-    private function loginWithAdmin(): void
+    public function loginWithAdmin()
     {
         $crawler = $this->client->request('GET', $this->urlGenerator->generate('login'));
         $form = $crawler->selectButton('Se connecter')->form();
-        $this->client->submit($form, ["_username" => 'Admin', "_password" => 'test']);
+        $this->client->submit($form, ['_username' => 'Admin', '_password' => 'test']);
+    }
+
+    public function testIndexAdmin()
+    {
+        $this->loginWithAdmin();
+
+        $this->client->request('GET', $this->urlGenerator->generate('admin_user_list'));
+
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
     }
 
     public function testEditUser()
@@ -50,17 +62,5 @@ class AdminControllerTest extends WebTestCase
 
 
     }
-
-    protected function setUp(): void
-    {
-        $this->client = self::createClient();
-        $this->userRepository = $this->client->getContainer()
-            ->get('doctrine.orm.default_entity_manager')
-            ->getRepository(User::class);
-        $this->urlGenerator = $this->client
-            ->getContainer()
-            ->get('router');
-    }
-
 
 }

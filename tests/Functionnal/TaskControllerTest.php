@@ -13,6 +13,20 @@ class TaskControllerTest extends WebTestCase
     private $userRepository;
     private $taskRepository;
 
+    protected function setUp(): void
+    {
+        $this->client = self::createClient();
+        $this->urlGenerator = $this->client
+            ->getContainer()
+            ->get('router');
+        $this->userRepository = $this->client->getContainer()
+            ->get('doctrine.orm.default_entity_manager')
+            ->getRepository(User::class);
+        $this->taskRepository = $this->client->getContainer()
+            ->get('doctrine.orm.default_entity_manager')
+            ->getRepository(Task::class);
+    }
+
     public function testListActionSuccessful()
     {
         $this->loginWithUser();
@@ -26,6 +40,12 @@ class TaskControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', $this->urlGenerator->generate('login'));
         $form = $crawler->selectButton('Se connecter')->form();
         $this->client->submit($form, ['_username' => 'User3', '_password' => 'test']);
+    }
+    public function loginWithAdmin()
+    {
+        $crawler = $this->client->request('GET', $this->urlGenerator->generate('login'));
+        $form = $crawler->selectButton('Se connecter')->form();
+        $this->client->submit($form, ['_username' => 'Admin', '_password' => 'test']);
     }
 
     public function testListActionFailed()
@@ -49,6 +69,7 @@ class TaskControllerTest extends WebTestCase
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertSelectorTextContains('html', 'Superbe');
     }
+
 
     public function testEditActionFailed()
     {
@@ -114,17 +135,33 @@ class TaskControllerTest extends WebTestCase
         $this->assertEquals(403, $this->client->getResponse()->getStatusCode());
     }
 
-    protected function setUp(): void
+    public function testListActionAdmin()
     {
-        $this->client = self::createClient();
-        $this->urlGenerator = $this->client
-            ->getContainer()
-            ->get('router');
-        $this->userRepository = $this->client->getContainer()
-            ->get('doctrine.orm.default_entity_manager')
-            ->getRepository(User::class);
-        $this->taskRepository = $this->client->getContainer()
-            ->get('doctrine.orm.default_entity_manager')
-            ->getRepository(Task::class);
+        $this->loginWithAdmin();
+        $crawler = $this->client->request('GET', $this->urlGenerator->generate('task_list'));
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertSelectorTextContains('html', 'Anonyme');
+    }
+    public function testIsDoneTask()
+    {
+        $this->loginWithUser();
+        $this->client->request('GET', $this->urlGenerator->generate('task_done'));
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+    }
+
+    public function testEditWithAdminRole()
+    {
+        $this->loginWithAdmin();
+        $task = $this->taskRepository->find(19);
+        $crawler = $this->client->request('GET', $this->urlGenerator->generate('task_edit', ['id' => $task->getId()]));
+
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $form = $crawler->selectButton('Modifier')->form();
+        $this->client->submit($form, ["task[title]" => "update test"]);
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+        $this->client->followRedirect();
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        $this->assertSelectorTextContains('html', 'Superbe');
+
     }
 }

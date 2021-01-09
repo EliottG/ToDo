@@ -13,6 +13,27 @@ class UserControllerTest extends WebTestCase
     private $userRepository;
     private $taskRepository;
 
+    protected function setUp(): void
+    {
+        $this->client = self::createClient();
+        $this->urlGenerator = $this->client
+            ->getContainer()
+            ->get('router');
+        $this->userRepository = $this->client->getContainer()
+            ->get('doctrine.orm.default_entity_manager')
+            ->getRepository(User::class);
+        $this->taskRepository = $this->client->getContainer()
+            ->get('doctrine.orm.default_entity_manager')
+            ->getRepository(Task::class);
+    }
+
+    private function loginWithUser(): void
+    {
+        $crawler = $this->client->request('GET', $this->urlGenerator->generate('login'));
+        $form = $crawler->selectButton('Se connecter')->form();
+        $this->client->submit($form, ['_username' => 'User3', '_password' => 'test']);
+    }
+
     public function testCreateAction()
     {
         $crawler = $this->client->request('GET', $this->urlGenerator->generate('user_create'));
@@ -43,13 +64,6 @@ class UserControllerTest extends WebTestCase
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
     }
 
-    public function loginWithUser(): void
-    {
-        $crawler = $this->client->request('GET', $this->urlGenerator->generate('login'));
-        $form = $crawler->selectButton('Se connecter')->form();
-        $this->client->submit($form, ['_username' => 'User3', '_password' => 'test']);
-    }
-
     public function testEditUserFailed()
     {
         $this->loginWithUser();
@@ -60,17 +74,10 @@ class UserControllerTest extends WebTestCase
         $this->assertEquals(403, $this->client->getResponse()->getStatusCode());
     }
 
-    protected function setUp(): void
+    public function testFailVoterUserPage()
     {
-        $this->client = self::createClient();
-        $this->urlGenerator = $this->client
-            ->getContainer()
-            ->get('router');
-        $this->userRepository = $this->client->getContainer()
-            ->get('doctrine.orm.default_entity_manager')
-            ->getRepository(User::class);
-        $this->taskRepository = $this->client->getContainer()
-            ->get('doctrine.orm.default_entity_manager')
-            ->getRepository(Task::class);
+        $this->client->request('GET', '/users/2/edit');
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
     }
+
 }

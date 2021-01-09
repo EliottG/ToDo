@@ -116,6 +116,19 @@ class TaskController extends AbstractController
     }
 
     /**
+     * @param TaskRepository $taskRepository
+     * @Route("/tasks/done", name="task_done")
+     */
+    public function isDoneTaskAction(TaskRepository $taskRepository)
+    {
+        $user = $this->getUser();
+        $tasks = $taskRepository->findByIsDone($user);
+        return $this->render('task/listDone.html.twig', [
+            'tasks' => $tasks
+            ]);
+
+    }
+    /**
      * @Route("/tasks/{id}/delete", name="task_delete")
      * @IsGranted("delete", subject="task")
      * @param Task $task

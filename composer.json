@@ -63,12 +63,18 @@
         "symfony/polyfill-php56": "*"
     },
     "scripts": {
-        "reset-db" : [
-            "symfony console doctrine:database:drop -f",
-            "symfony console doctrine:database:create",
-            "symfony console doctrine:schema:update -f",
-            "symfony console doctrine:fixtures:load -n"
-        ],
+      "reset-db" : [
+        "symfony console doctrine:database:drop -f",
+        "symfony console doctrine:database:create",
+        "symfony console doctrine:schema:update -f",
+        "symfony console doctrine:fixtures:load -n"
+      ],
+      "reset-db-test" : [
+        "symfony console --env=test  doctrine:database:drop -f",
+        "symfony console  --env=test doctrine:database:create",
+        "symfony console  --env=test doctrine:schema:update -f",
+        "symfony console  --env=test  doctrine:fixtures:load -n"
+      ],
         "auto-scripts": {
             "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
             "cache:clear": "symfony-cmd",
