@@ -27,50 +27,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b3cfe4d-9661-4ba4-9187-d4a87a4cb5f1" name="Default Changelist" comment="add functionnals test">
-      <change afterPath="$PROJECT_DIR$/config/packages/test/security.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/TaskTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/UserTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/listDone.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.css/nv.d3.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.css/octicons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.icons/file-code.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.icons/file-directory.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.js/d3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.js/file.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.js/nv.d3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Controller/DefaultController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Controller/SecurityController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Controller/TaskController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Controller/UserController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Controller/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Controller/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Entity/Task.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Entity/User.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Entity/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Entity/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Form/TaskType.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Form/UserType.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Form/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Form/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Kernel.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TaskRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Functionnal/AdminControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Functionnal/AdminControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Functionnal/TaskControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Functionnal/TaskControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Functionnal/UserControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Functionnal/UserControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/TaskFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/TaskFixtures.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +203,9 @@
       <workItem from="1609750631505" duration="1285000" />
       <workItem from="1609872712144" duration="604000" />
       <workItem from="1609951097537" duration="3872000" />
-      <workItem from="1610188334565" duration="5649000" />
+      <workItem from="1610188334565" duration="7053000" />
+      <workItem from="1610392420615" duration="1095000" />
+      <workItem from="1610446673951" duration="2405000" />
     </task>
     <task id="LOCAL-00001" summary="Add fixtures">
       <created>1607772552238</created>
@@ -333,10 +296,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="779" y="299" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608139769923" />
-    <state x="184" y="87" key="DiffContextDialog" timestamp="1608383563781">
+    <state x="184" y="87" key="DiffContextDialog" timestamp="1610470757589">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="184" y="87" key="DiffContextDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608383563781" />
+    <state x="184" y="87" key="DiffContextDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1610470757589" />
     <state x="740" y="266" key="FileChooserDialogImpl" timestamp="1607769343919">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -345,10 +308,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="788" y="248" key="NewPhpClassDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608743422457" />
-    <state x="812" y="227" key="RollbackChangesDialog" timestamp="1608383567969">
+    <state x="812" y="227" key="RollbackChangesDialog" timestamp="1610470759431">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="812" y="227" key="RollbackChangesDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608383567969" />
+    <state x="812" y="227" key="RollbackChangesDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1610470759431" />
     <state x="461" y="170" key="SettingsEditor" timestamp="1608463984174">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -11,24 +11,26 @@ class TaskFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        for ($i = 1; $i < 20; $i++) {
+        for ($i = 1; $i < 200; $i++) {
             $task = new Task();
             $task->setContent('Content task'. $i);
             $task->setCreatedAt(new \DateTime());
             $task->setTitle('TitleTask' . $i);
             switch ($i) {
-                case ($i < 4) :
+                case ($i < 50) :
                     $task->setUser($this->getReference(UserFixtures::USER_REFERENCE_ONE));
                     break;
-                case ($i < 8) :
+                case ($i < 100) :
                     $task->setUser($this->getReference(UserFixtures::USER_REFERENCE_TWO));
                     break;
-                case ($i < 12) :
+                case ($i < 150) :
                     $task->setUser($this->getReference(UserFixtures::USER_REFERENCE_THREE));
                     break;
-                case ($i < 16) :
+                case ($i < 200) :
                     $task->setUser($this->getReference(UserFixtures::USER_REFERENCE_FOUR));
                     break;
+                default:
+                    $task->setUser($this->getReference(UserFixtures::USER_REFERENCE_ONE));
             }
             $manager->persist($task);
         }
