@@ -84,7 +84,7 @@ class TaskControllerTest extends WebTestCase
     public function testEditActionSuccessful()
     {
         $this->loginWithUser();
-        $task = $this->taskRepository->find(9);
+        $task = $this->taskRepository->findOneBy(['user'=> 3]);
         $crawler = $this->client->request('GET', $this->urlGenerator->generate('task_edit', ['id' => $task->getId()]));
 
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
@@ -100,7 +100,7 @@ class TaskControllerTest extends WebTestCase
     public function testToggleTaskActionSuccess()
     {
         $this->loginWithUser();
-        $task = $this->taskRepository->find(9);
+        $task = $this->taskRepository->findOneBy(['user'=> 3]);
         $crawler = $this->client->request('GET', $this->urlGenerator->generate('task_toggle', ['id' => $task->getId()]));
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
         $this->client->followRedirect();
@@ -119,7 +119,7 @@ class TaskControllerTest extends WebTestCase
     public function testDeleteTaskActionSuccess()
     {
         $this->loginWithUser();
-        $task = $this->taskRepository->find(9);
+        $task = $this->taskRepository->findOneBy(['user'=> 3]);
         $crawler = $this->client->request('GET', $this->urlGenerator->generate('task_delete', ['id' => $task->getId()]));
         $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
         $this->client->followRedirect();
