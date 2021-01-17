@@ -27,9 +27,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b3cfe4d-9661-4ba4-9187-d4a87a4cb5f1" name="Default Changelist" comment="add functionnals test">
-      <change afterPath="$PROJECT_DIR$/CONTRIBUTING.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/CONTRIBUTING.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/TaskFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/TaskFixtures.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +153,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -203,7 +206,9 @@
       <workItem from="1609951097537" duration="3872000" />
       <workItem from="1610188334565" duration="7053000" />
       <workItem from="1610392420615" duration="1095000" />
-      <workItem from="1610446673951" duration="3383000" />
+      <workItem from="1610446673951" duration="4725000" />
+      <workItem from="1610541008609" duration="5686000" />
+      <workItem from="1610876368990" duration="3651000" />
     </task>
     <task id="LOCAL-00001" summary="Add fixtures">
       <created>1607772552238</created>
@@ -282,6 +287,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608140882356" />
+    <state x="640" y="261" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1610555067215">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="640" y="261" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610555067215" />
     <state x="649" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608236391499">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -310,10 +319,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="812" y="227" key="RollbackChangesDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1610470759431" />
-    <state x="461" y="170" key="SettingsEditor" timestamp="1608463984174">
+    <state x="461" y="170" key="SettingsEditor" timestamp="1610558141241">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608463984174" />
+    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1610558141241" />
+    <state x="681" y="266" width="540" height="524" key="StructurePopup" timestamp="1610559700549">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="681" y="266" width="540" height="524" key="StructurePopup/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1610559700549" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1607876014108">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -340,9 +353,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608393874755" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1608744429664">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1610559696786">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608744429664" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1610559696786" />
   </component>
 </project>

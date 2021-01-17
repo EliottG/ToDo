@@ -64,10 +64,10 @@
     },
     "scripts": {
       "reset-db" : [
-        "symfony console doctrine:database:drop -f",
-        "symfony console doctrine:database:create",
-        "symfony console doctrine:schema:update -f",
-        "symfony console doctrine:fixtures:load -n"
+        "symfony console doctrine:database:drop -f --env=dev",
+        "symfony console doctrine:database:create --env=dev",
+        "symfony console doctrine:schema:update -f --env=dev",
+        "symfony console doctrine:fixtures:load -n --env=dev"
       ],
       "reset-db-test" : [
         "symfony console --env=test  doctrine:database:drop -f",

@@ -15,7 +15,7 @@ https://openclassrooms.com/projects/ameliorer-un-projet-existant-1
 # How to install
 
 1 - Clone the repository in your local server folder
-> https://github.com/EliottG/ToDo.git
+> git clone https://github.com/EliottG/ToDo.git
 
 2 - Create a .env.local file from .env and configure BDD
 

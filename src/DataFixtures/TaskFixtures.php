@@ -27,7 +27,6 @@ class TaskFixtures extends Fixture implements DependentFixtureInterface
                     $task->setUser($this->getReference(UserFixtures::USER_REFERENCE_THREE));
                     break;
                 case ($i < 200) :
-                    $task->setUser($this->getReference(UserFixtures::USER_REFERENCE_FOUR));
                     break;
                 default:
                     $task->setUser($this->getReference(UserFixtures::USER_REFERENCE_ONE));
