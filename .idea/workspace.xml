@@ -27,17 +27,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b3cfe4d-9661-4ba4-9187-d4a87a4cb5f1" name="Default Changelist" comment="add functionnals test">
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ToDo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ToDo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Functionnal/TaskControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Functionnal/TaskControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +48,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -159,19 +163,25 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,json,php}" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\laragon\www\ToDo\node_modules\prettier" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\ToDo\config\packages\test" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\ToDo\tests\Functionnal" />
       <recent name="C:\laragon\www\ToDo\templates\admin" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\ToDo\config\packages\test" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="1b3cfe4d-9661-4ba4-9187-d4a87a4cb5f1" name="Default Changelist" comment="" />
@@ -215,6 +225,11 @@
       <workItem from="1610446673951" duration="4725000" />
       <workItem from="1610541008609" duration="5686000" />
       <workItem from="1610876368990" duration="3651000" />
+      <workItem from="1610897970240" duration="178000" />
+      <workItem from="1610898216389" duration="3202000" />
+      <workItem from="1610902414218" duration="796000" />
+      <workItem from="1610904241877" duration="2084000" />
+      <workItem from="1610989466508" duration="270000" />
     </task>
     <task id="LOCAL-00001" summary="Add fixtures">
       <created>1607772552238</created>
@@ -289,6 +304,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1609694669171" />
+    <state x="721" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610893504096">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="721" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1610893504096" />
     <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1608140882356">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -321,14 +340,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="788" y="248" key="NewPhpClassDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1608743422457" />
-    <state x="812" y="227" key="RollbackChangesDialog" timestamp="1610883135080">
+    <state x="812" y="227" key="RollbackChangesDialog" timestamp="1610906324351">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="812" y="227" key="RollbackChangesDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1610883135080" />
-    <state x="461" y="170" key="SettingsEditor" timestamp="1610558141241">
+    <state x="812" y="227" key="RollbackChangesDialog/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1610906324351" />
+    <state x="609" y="31" key="SettingsEditor" timestamp="1610906217710">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1610558141241" />
+    <state x="609" y="31" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1610906217710" />
     <state x="681" y="266" width="540" height="524" key="StructurePopup" timestamp="1610559700549">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

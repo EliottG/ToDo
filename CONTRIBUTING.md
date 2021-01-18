@@ -1,21 +1,21 @@
 Contribution Guide
 ============
 
-# How to contribute to the project:
+## How to contribute to the project:
 
 
-- First you'll need to follow the [README](./README.md) to install the project
+  - First you'll need to follow the [README](./README.md) to install the project
 
-- Then if you want to add a new Feature on ToDoList, you must create your own branch 
+  - Then if you want to add a new Feature on ToDoList, you must create your own branch 
 
         git branch feature-branch
         git checkout -b feature-branch
                 
-- When you have finished, push your feature branch to open a Pull Request
+  - When you have finished, push your feature branch to open a Pull Request
    
         git push origin feature-branch
         
-- Your pull request will be analysed and will be accepted according to the opinion of the lead developer.
+  - Your pull request will be analysed and will be accepted according to the opinion of the lead developer.
 
 
 ## Add features
@@ -34,8 +34,11 @@ In your issue ticket, you can add screenshots of the place where the issue has b
  
 ## The convention to follow
 
-- The feature that you want to add must be tested in the folder "tests"
-- Your code must respect some PSR's  (PSR-1,PSR-4, PSR-12..)
-- Your commit message must be clear and understable, so that it will be easier to understand your updates
-- When your Pull Request can close an Issue, you must add in your title **closes #numberOfTheTicket** to close 
+  - The feature that you want to add must be tested in the folder "tests"
+
+  - Your code must respect some PSR's  (PSR-1,PSR-4, PSR-12..)
+
+  - Your commit message must be clear and understable, so that it will be easier to understand your updates
+
+  - When your Pull Request can close an Issue, you must add in your title **closes #numberOfTheTicket** to close 
 the issue
