@@ -27,15 +27,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b3cfe4d-9661-4ba4-9187-d4a87a4cb5f1" name="Default Changelist" comment="add functionnals test">
-      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ToDo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ToDo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app_dev.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +224,8 @@
       <workItem from="1610898216389" duration="3202000" />
       <workItem from="1610902414218" duration="796000" />
       <workItem from="1610904241877" duration="2084000" />
-      <workItem from="1610989466508" duration="270000" />
+      <workItem from="1610989466508" duration="1087000" />
+      <workItem from="1611162090681" duration="1021000" />
     </task>
     <task id="LOCAL-00001" summary="Add fixtures">
       <created>1607772552238</created>

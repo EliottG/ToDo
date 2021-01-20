@@ -143,7 +143,6 @@ class TaskController extends AbstractController
 		$entityManager->remove($task);
 		$entityManager->flush();
 		$this->addFlash('success', 'La tâche a bien été supprimée.');
-
 		return $this->redirectToRoute('task_list');
 	}
 }
