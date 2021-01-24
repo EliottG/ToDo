@@ -1,6 +1,8 @@
 ToDoList
 ========
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b0dd22e78cf8496eab6d58c46235532c)](https://app.codacy.com/gh/EliottG/ToDo?utm_source=github.com&utm_medium=referral&utm_content=EliottG/ToDo&utm_campaign=Badge_Grade)
+
 Base du projet #8 : Améliorez un projet existant
 
 https://openclassrooms.com/projects/ameliorer-un-projet-existant-1
