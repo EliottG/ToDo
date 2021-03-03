@@ -6,7 +6,7 @@ security:
         doctrine:
             entity:
                 class: App\Entity\User
-                property: username
+                property: email
 
     firewalls:
         dev:
